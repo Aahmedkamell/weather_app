@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:weather_app/views/search_view.dart';
 import 'package:weather_app/widgets/no_weather.dart';
 
 class HomeView extends StatelessWidget {
@@ -9,7 +9,24 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Weather App', style: GoogleFonts.poppins())),
+      appBar: AppBar(
+        backgroundColor: Colors.orangeAccent,
+        title: Text(
+          'Weather App',
+          style: GoogleFonts.poppins(fontSize: 26, fontWeight: FontWeight.w500),
+        ),
+        actions: [
+          IconButton(
+            style: IconButton.styleFrom(iconSize: 32),
+            icon: const Icon(Icons.search),
+            onPressed: () {
+              Navigator.of(
+                context,
+              ).push(MaterialPageRoute(builder: (context) => SearchView()));
+            },
+          ),
+        ],
+      ),
       body: NoWeather(),
     );
   }

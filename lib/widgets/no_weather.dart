@@ -6,27 +6,31 @@ class NoWeather extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(padding: EdgeInsets.symmetric(horizontal: 16),
-    
-    child: Center(
-      child: Column(
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 16),
 
-         mainAxisSize: MainAxisSize.min,
+      child: Center(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
           children: [
-            Text('No weather data available 🌧️😞', style: GoogleFonts.tajawal(
-              fontSize: 20,
-              fontWeight: FontWeight.w500,
-            ),),
-             Text(' Search Now 🔍', style: GoogleFonts.tajawal(
-              fontSize: 18,
-              fontWeight: FontWeight.w500,
-              color: Colors.blueAccent,
-            ),)
-          ]
+            Text(
+              'No weather data available 🌧️😞',
+              style: GoogleFonts.tajawal(
+                fontSize: 22,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+            Text(
+              ' Search Now 🔍',
+              style: GoogleFonts.tajawal(
+                fontSize: 20,
+                fontWeight: FontWeight.w500,
+                color: Colors.blueAccent,
+              ),
+            ),
+          ],
+        ),
       ),
-    ),
     );
   }
 }
-
-  

@@ -18,6 +18,11 @@ class SearchView extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 16),
         child: Center(
           child: TextField(
+            cursorColor: Colors.orangeAccent,
+            onSubmitted: (value) {
+              print(value);
+            },
+
             decoration: InputDecoration(
               contentPadding: EdgeInsets.symmetric(
                 vertical: 32,

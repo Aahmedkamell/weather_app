@@ -10,19 +10,15 @@ class WeatherServices {
   final String apiKey = '88564ba1262f421eb5c163628252410';
 
   Future<WeatherModel?> getCurrentWeather({required String CityName}) async {
-    
-      Response response = await dio.get(
-        '$baseUrl/forecast.json?key=$apiKey&q=$CityName&days=1',
-      );
+    Response response = await dio.get(
+      '$baseUrl/forecast.json?key=$apiKey&q=$CityName&days=1',
+    );
 
-      if (response.statusCode == 201) {
-        final weatherModel = WeatherModel.fromJson(response.data);
-      } else {
-        final String errorMessage = response.data['error']['message'];
-        throw Exception(errorMessage);
-      }
-
-     
-    
+    if (response.statusCode == 201) {
+      final weatherModel = WeatherModel.fromJson(response.data);
+    } else {
+      final String errorMessage = response.data['error']['message'];
+      throw Exception(errorMessage);
+    }
   }
 }

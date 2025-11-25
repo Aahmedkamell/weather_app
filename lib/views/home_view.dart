@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:weather_app/views/search_view.dart';
 import 'package:weather_app/widgets/no_weather.dart';
+import 'package:weather_app/widgets/weather_info.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -27,7 +28,7 @@ class HomeView extends StatelessWidget {
           ),
         ],
       ),
-      body: NoWeather(),
+      body: WeatherInfo()
     );
   }
 }

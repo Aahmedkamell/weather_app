@@ -1,18 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:weather_app/cubits/get_weather_cubit/get_weather_cubit.dart';
+import 'package:weather_app/models/weather_model.dart';
 
 class WeatherInfo extends StatelessWidget {
-  const WeatherInfo({Key? key}) : super(key: key);
+  const WeatherInfo({Key? key, required WeatherModel weatherModel}) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
+   var weatherModel= BlocProvider.of<GetWeatherCubit>(context).weatherModel;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            'Alexandria',
+            weatherModel.cityName,
             style: GoogleFonts.tajawal(
               fontSize: 32,
               fontWeight: FontWeight.w500,

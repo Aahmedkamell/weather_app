@@ -27,7 +27,7 @@ class WeatherInfo extends StatelessWidget {
             ),
           ),
           Text(
-            'updated at ${(weatherModel.date)}',
+            'updated at ${weatherModel.date.hour}:${weatherModel.date.minute}',
             style: TextStyle(fontSize: 24),
           ),
           const SizedBox(height: 32),

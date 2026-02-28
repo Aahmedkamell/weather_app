@@ -102,7 +102,7 @@ dependencies:
 
 Clone the repository:
 
-git clone https://github.com/your-username/weather_app.git
+git clone https://github.com/Aahmedkamell/weather_app.git
 
 Navigate to the project folder:
 

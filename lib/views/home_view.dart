@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:weather_app/cubits/get_weather_cubit/get_weather_cubit.dart';
 import 'package:weather_app/cubits/get_weather_cubit/get_weather_states.dart';
+import 'package:weather_app/main.dart';
 import 'package:weather_app/views/search_view.dart';
 import 'package:weather_app/widgets/no_weather.dart';
 import 'package:weather_app/widgets/weather_info.dart';
@@ -12,9 +13,10 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final cubit = context.watch<GetWeatherCubit>();
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.orangeAccent,
+        backgroundColor: getWeatherColor(cubit.weatherModel?.weatherCondition),
         title: Text(
           'Weather App',
           style: GoogleFonts.poppins(fontSize: 26, fontWeight: FontWeight.w500),
@@ -37,7 +39,7 @@ class HomeView extends StatelessWidget {
             return NoWeather();
           } else if (State is WeatherLoadedState) {
             return WeatherInfo(
-              weatherModel: State.weatherModel,
+              weatherModel: State.weatherModel, weather: State.weatherModel,
             );
           } else {
             return Text('opps there was an error');
